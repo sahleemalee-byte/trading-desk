@@ -1,0 +1,78 @@
+{
+  "as_of": "2026-08-02T14:50",
+  "day": "2026-08-02",
+  "weekday": "Sunday",
+  "highlights": [],
+  "trade": {
+    "summary": "RISK-ON \u2014 skipped (Friday/non-trading day).",
+    "proposals": [],
+    "stubbed": false
+  },
+  "long_term": {
+    "summary": "Ideas this month: Semiconductors. Funding 3 name(s), $650 split evenly.",
+    "ideas": [
+      {
+        "theme": "Semiconductors",
+        "verdict": "strong",
+        "why": "AI demand plus a cyclical upturn; leaders keep compounding.",
+        "names": [
+          "NVDA",
+          "TSM"
+        ]
+      },
+      {
+        "theme": "AI infrastructure",
+        "verdict": "watch",
+        "why": "Datacenter and power buildout is real, but wait for a pullback.",
+        "names": [
+          "VRT"
+        ]
+      },
+      {
+        "theme": "Broad tech",
+        "verdict": "core",
+        "why": "Low-cost anchor to hold the sleeve steady.",
+        "names": [
+          "QQQ"
+        ]
+      }
+    ],
+    "buy_plan": [
+      {
+        "ticker": "NVDA",
+        "amount": 216.67
+      },
+      {
+        "ticker": "TSM",
+        "amount": 216.67
+      },
+      {
+        "ticker": "QQQ",
+        "amount": 216.67
+      }
+    ],
+    "monthly_amount": 650.0,
+    "is_research_day": false,
+    "stubbed": true
+  },
+  "debt": {
+    "summary": "$28,000 left; need ~$1,298/week for 22 weeks.",
+    "remaining": 28000.0,
+    "weekly_pace_needed": 1298.01
+  },
+  "tax": {
+    "summary": "Set aside ~$0 (federal $0 + IL state $0). Estimate only \u2014 confirm with your CPA.",
+    "futures_pnl": 0,
+    "prop_income": 0,
+    "federal": 0.0,
+    "state": 0.0,
+    "estimated_reserve": 0.0
+  },
+  "ledger": {
+    "realized_pnl": 0,
+    "payouts_total": 0,
+    "r_stats": {
+      "count": 0
+    }
+  }
+}
