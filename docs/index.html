@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>trading desk</title>
+<style>
+  :root{
+    --bg:#faf9f5; --card:#ffffff; --line:#e7e5df; --ink:#1f1e1c; --muted:#6b6a64;
+    --accent:#185fa5; --good:#0f6e56; --good-bg:#e1f5ee; --warn:#854f0b; --warn-bg:#faeeda;
+    --chip:#f1efe8;
+  }
+  @media (prefers-color-scheme: dark){
+    :root{ --bg:#1a1a18; --card:#242422; --line:#38372f; --ink:#f0efe9; --muted:#a3a29a;
+           --accent:#85b7eb; --good:#5dcaa5; --good-bg:#0f3b30; --warn:#ef9f27; --warn-bg:#3a2a0e; --chip:#2f2e28; }
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);
+       font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+       line-height:1.6;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:900px;margin:0 auto;padding:20px 16px 60px}
+  header{display:flex;align-items:center;justify-content:space-between;gap:12px;
+         padding-bottom:14px;border-bottom:.5px solid var(--line)}
+  .brand{font-size:19px;font-weight:600}
+  .meta{font-size:13px;color:var(--muted);text-align:right}
+  .banner{margin:14px 0 0;padding:10px 14px;border-radius:10px;background:var(--good-bg);
+          color:var(--good);font-size:14px;display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+  .banner.warn{background:var(--warn-bg);color:var(--warn)}
+  nav{display:flex;gap:6px;margin:16px 0 18px;flex-wrap:wrap}
+  nav button{border:.5px solid var(--line);background:var(--card);color:var(--muted);
+             padding:7px 14px;border-radius:999px;font-size:14px;cursor:pointer}
+  nav button.active{color:var(--ink);border-color:var(--ink);font-weight:500}
+  .view{display:none}.view.active{display:block}
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:12px}
+  .card{background:var(--card);border:.5px solid var(--line);border-radius:12px;padding:16px 18px}
+  .card h3{margin:0 0 4px;font-size:14px;font-weight:500;color:var(--muted)}
+  .big{font-size:26px;font-weight:600;margin:2px 0}
+  .sub{font-size:13px;color:var(--muted);margin:0}
+  .pill{font-size:12px;padding:3px 10px;border-radius:999px;background:var(--good-bg);color:var(--good)}
+  .row{display:flex;justify-content:space-between;gap:10px;font-size:14px;padding:5px 0}
+  .row+.row{border-top:.5px solid var(--line)}
+  .bar{height:8px;border-radius:999px;background:var(--chip);overflow:hidden;margin:8px 0}
+  .bar>i{display:block;height:100%;background:var(--accent)}
+  .idea{border:.5px solid var(--line);border-radius:10px;padding:12px 14px;margin-bottom:10px}
+  .idea .t{font-weight:500}
+  .tag{font-size:12px;padding:2px 9px;border-radius:999px;background:var(--chip);color:var(--muted)}
+  .tag.strong{background:var(--good-bg);color:var(--good)}
+  .why{font-size:13px;color:var(--muted);margin:6px 0 0}
+  .names{font-size:13px;margin:6px 0 0}
+  h2.vt{font-size:16px;font-weight:500;margin:0 0 12px}
+  .muted{color:var(--muted)}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="brand">trading desk</div>
+    <div class="meta"><span id="asof">—</span><br><span id="who">🔒 sahleemalee-byte</span></div>
+  </header>
+
+  <div id="banner"></div>
+
+  <nav id="tabs">
+    <button data-tab="overview" class="active">Overview</button>
+    <button data-tab="trade">Trade</button>
+    <button data-tab="long">Long-term</button>
+    <button data-tab="debt">Debt</button>
+    <button data-tab="tax">Tax</button>
+  </nav>
+
+  <section id="overview" class="view active"></section>
+  <section id="trade" class="view"></section>
+  <section id="long" class="view"></section>
+  <section id="debt" class="view"></section>
+  <section id="tax" class="view"></section>
+</div>
+
+<script>
+const SAMPLE = {
+  as_of:"preview", day:"2026-08-05", weekday:"Wednesday",
+  highlights:["1 trade setup pending your ok"],
+  trade:{summary:"RISK-ON (score +0.60) — 1 setup(s), pending your approval.",
+    verdict:"RISK-ON", score:0.6, stubbed:false,
+    signals:{vix:"risk-off",smh:"risk-on",ewy_kospi:"risk-on",ief:"neutral",shy:"neutral",usdjpy:"risk-on",dealer_gamma:"long gamma (supportive)"},
+    proposals:[{instrument:"NQ",direction:"long",setup:"IB breakout",entry:28226,stop:28196,target:28316,size:2,account:"Lucid-01"}]},
+  long_term:{summary:"Ideas this month: Semiconductors.",
+    ideas:[{theme:"Semiconductors",verdict:"strong",why:"AI demand plus a cyclical upturn; leaders keep compounding.",names:["NVDA","TSM"]},
+           {theme:"AI infrastructure",verdict:"watch",why:"Datacenter and power buildout is real, but wait for a pullback.",names:["VRT"]},
+           {theme:"Broad tech",verdict:"core",why:"Low-cost anchor to hold the sleeve steady.",names:["QQQ"]}],
+    buy_plan:[{ticker:"NVDA",amount:216.67},{ticker:"TSM",amount:216.67},{ticker:"QQQ",amount:216.67}], monthly_amount:650},
+  debt:{summary:"$26,500 left; need ~$1,253/week for 21 weeks.", remaining:26500, weekly_pace_needed:1253},
+  tax:{summary:"Set aside ~$1,282.", federal:1030, state:252, estimated_reserve:1282},
+  ledger:{realized_pnl:3600, payouts_total:1500, r_stats:{count:1,avg_r:3.0,win_rate:1.0}}
+};
+const money = n => "$"+Math.round(n).toLocaleString();
+
+function render(s){
+  document.getElementById("asof").textContent = s.weekday+" · updated "+s.as_of;
+  const b = document.getElementById("banner");
+  if(s.highlights && s.highlights.length){
+    const warn = s.highlights.some(h=>/placeholder|api key/i.test(h));
+    b.className = "banner"+(warn?" warn":"");
+    b.textContent = "🔔 "+s.highlights.join("  ·  ");
+  } else b.innerHTML="";
+
+  const t=s.trade||{}, l=s.long_term||{}, d=s.debt||{}, x=s.tax||{}, led=s.ledger||{};
+
+  document.getElementById("overview").innerHTML = `<div class="grid">
+    <div class="card"><h3>Trade agent</h3><div class="big">${t.verdict||"—"} ${t.score!=null?"("+(t.score>0?"+":"")+t.score+")":""}</div><p class="sub">${(t.proposals&&t.proposals.length)?t.proposals.length+" setup pending":"no setups"}</p></div>
+    <div class="card"><h3>Long-term research</h3><div class="big" style="font-size:18px">${(l.ideas||[]).filter(i=>i.verdict==="strong").map(i=>i.theme).join(", ")||"—"}</div><p class="sub">${money(l.monthly_amount||0)} split across your picks</p></div>
+    <div class="card"><h3>Debt clearing</h3><div class="big">${money(d.remaining||0)}</div><p class="sub">left · ~${money(d.weekly_pace_needed||0)}/week</p></div>
+    <div class="card"><h3>Tax reserve</h3><div class="big">${money(x.estimated_reserve||0)}</div><p class="sub">federal ${money(x.federal||0)} + IL ${money(x.state||0)}</p></div>
+  </div>`;
+
+  const sig = t.signals ? Object.entries(t.signals).map(([k,v])=>`<div class="row"><span>${k}</span><span class="muted">${v}</span></div>`).join("") : `<p class="muted">no live signals (weekend or no key)</p>`;
+  const props = (t.proposals&&t.proposals.length) ? t.proposals.map(p=>`<div class="idea"><span class="t">${p.instrument} ${p.direction} · ${p.setup}</span><div class="why">entry ${p.entry} · stop ${p.stop} · target ${p.target} · ${p.size} contracts (${p.account})</div></div>`).join("") : `<p class="muted">nothing to approve right now.</p>`;
+  document.getElementById("trade").innerHTML = `<h2 class="vt">${t.summary||""}</h2><div class="card"><h3>signals</h3>${sig}</div><h2 class="vt" style="margin-top:18px">setups (you approve)</h2>${props}`;
+
+  const ideas = (l.ideas||[]).map(i=>`<div class="idea"><div style="display:flex;justify-content:space-between;align-items:center"><span class="t">${i.theme}</span><span class="tag ${i.verdict==="strong"?"strong":""}">${i.verdict}</span></div><p class="why">${i.why}</p><p class="names"><span class="muted">names:</span> ${i.names.join(", ")}</p></div>`).join("");
+  const plan = (l.buy_plan||[]).map(p=>`<div class="row"><span>${p.ticker}</span><span>${money(p.amount)}</span></div>`).join("");
+  document.getElementById("long").innerHTML = `<h2 class="vt">this month's research</h2>${ideas}<div class="card" style="margin-top:6px"><h3>if you fund these — equal split</h3>${plan||'<p class="muted">no picks yet</p>'}</div>`;
+
+  const target = 28000, paid = (target-(d.remaining||target)), pct = Math.max(2,Math.round(paid/target*100));
+  document.getElementById("debt").innerHTML = `<div class="card"><h3>obligation</h3><div class="big">${money(d.remaining||0)} <span class="sub" style="font-weight:400">left of ${money(target)}</span></div><div class="bar"><i style="width:${pct}%"></i></div><p class="sub">${money(paid)} cleared · pace needed ~${money(d.weekly_pace_needed||0)}/week</p></div>`;
+
+  document.getElementById("tax").innerHTML = `<div class="card"><h3>set aside for taxes</h3><div class="big">${money(x.estimated_reserve||0)}</div><div class="row"><span>federal (1256 60/40 + prop 1099)</span><span>${money(x.federal||0)}</span></div><div class="row"><span>illinois state</span><span>${money(x.state||0)}</span></div></div><p class="sub" style="margin-top:10px">estimate only — confirm with your CPA. realized P&L so far: ${money(led.realized_pnl||0)}.</p>`;
+}
+
+document.getElementById("tabs").addEventListener("click", e=>{
+  const t = e.target.closest("button"); if(!t) return;
+  document.querySelectorAll("#tabs button").forEach(b=>b.classList.toggle("active", b===t));
+  document.querySelectorAll(".view").forEach(v=>v.classList.toggle("active", v.id===t.dataset.tab));
+});
+
+fetch("state.json").then(r=>{ if(!r.ok) throw 0; return r.json(); })
+  .then(render).catch(()=>render(SAMPLE));
+</script>
+</body>
+</html>
