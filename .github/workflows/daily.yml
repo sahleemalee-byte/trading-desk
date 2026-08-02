@@ -17,12 +17,13 @@ jobs:
           python-version: "3.12"
 
       - name: Run the desk and publish results
+        working-directory: trading-desk
         env:
           TWELVEDATA_API_KEY: ${{ secrets.TWELVEDATA_API_KEY }}
-          PYTHONPATH: trading-desk
+          DESK_STATE_PATH: ../docs/state.json
         run: python -m trading_desk.publish
 
-      - name: Notify (optional - set NTFY_TOPIC secret to enable)
+      - name: Notify (optional)
         env:
           NTFY_TOPIC: ${{ secrets.NTFY_TOPIC }}
         run: |
@@ -36,6 +37,6 @@ jobs:
         run: |
           git config user.name "trading-desk-bot"
           git config user.email "bot@users.noreply.github.com"
-          git add docs/state.json ledger.json || true
+          git add docs/state.json trading-desk/ledger.json || true
           git commit -m "update desk" || echo "nothing changed"
           git push || echo "nothing to push"
