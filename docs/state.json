@@ -1,0 +1,105 @@
+{
+  "as_of": "2026-08-03T18:26",
+  "day": "2026-08-03",
+  "weekday": "Monday",
+  "highlights": [
+    "1 trade setup(s) pending your ok"
+  ],
+  "trade": {
+    "summary": "RISK-ON (score +0.70) \u2014 1 setup(s), pending your approval.",
+    "proposals": [
+      {
+        "instrument": "NQ",
+        "direction": "long",
+        "setup": "IB breakout",
+        "entry": 28226.0,
+        "stop": 28196.0,
+        "target": 28316.0,
+        "size": 2,
+        "account": "Lucid-01",
+        "point_value": 20.0,
+        "rationale": "Reclaim of 28,226 pivot with KOSPI-led semis bid.  [risk $1,200, 3.0R]"
+      }
+    ],
+    "verdict": "RISK-ON",
+    "score": 0.7,
+    "signals": {
+      "vix": "risk-on",
+      "smh": "risk-on",
+      "ewy_kospi": "risk-on",
+      "ief": "neutral",
+      "shy": "risk-on",
+      "usdjpy": "risk-off",
+      "dealer_gamma": "long gamma (supportive)",
+      "news": "no major scheduled events"
+    },
+    "stubbed": false
+  },
+  "long_term": {
+    "summary": "Ideas this month: Semiconductors. Funding 3 name(s), $650 split evenly.",
+    "ideas": [
+      {
+        "theme": "Semiconductors",
+        "verdict": "strong",
+        "why": "AI demand plus a cyclical upturn; leaders keep compounding.",
+        "names": [
+          "NVDA",
+          "TSM"
+        ]
+      },
+      {
+        "theme": "AI infrastructure",
+        "verdict": "watch",
+        "why": "Datacenter and power buildout is real, but wait for a pullback.",
+        "names": [
+          "VRT"
+        ]
+      },
+      {
+        "theme": "Broad tech",
+        "verdict": "core",
+        "why": "Low-cost anchor to hold the sleeve steady.",
+        "names": [
+          "QQQ"
+        ]
+      }
+    ],
+    "buy_plan": [
+      {
+        "ticker": "NVDA",
+        "amount": 216.67
+      },
+      {
+        "ticker": "TSM",
+        "amount": 216.67
+      },
+      {
+        "ticker": "QQQ",
+        "amount": 216.67
+      }
+    ],
+    "monthly_amount": 650.0,
+    "is_research_day": false,
+    "stubbed": true
+  },
+  "debt": {
+    "summary": "$28,000 left; need ~$1,307/week for 21 weeks.",
+    "remaining": 28000.0,
+    "weekly_pace_needed": 1306.67
+  },
+  "tax": {
+    "summary": "Set aside ~$0 (federal $0 + IL state $0). Estimate only \u2014 confirm with your CPA.",
+    "futures_pnl": 0,
+    "prop_income": 0,
+    "federal": 0.0,
+    "state": 0.0,
+    "estimated_reserve": 0.0
+  },
+  "ledger": {
+    "realized_pnl": 0,
+    "payouts_total": 0,
+    "r_stats": {
+      "count": 0
+    }
+  }
+}
