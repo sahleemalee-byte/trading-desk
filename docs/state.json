@@ -1,7 +1,7 @@
 {
-  "as_of": "2026-08-20T12:40",
-  "day": "2026-08-20",
-  "weekday": "Thursday",
+  "as_of": "2026-08-24T12:41",
+  "day": "2026-08-24",
+  "weekday": "Monday",
   "highlights": [
     "1 trade setup(s) pending your ok"
   ],
@@ -26,10 +26,10 @@
     "signals": {
       "vix": "risk-on",
       "smh": "risk-off",
-      "ewy_kospi": "risk-on",
-      "ief": "risk-off",
+      "ewy_kospi": "neutral",
+      "ief": "risk-on",
       "shy": "neutral",
-      "usdjpy": "risk-on",
+      "usdjpy": "neutral",
       "dealer_gamma": "long gamma (supportive)",
       "news": "no major scheduled events"
     },
@@ -83,9 +83,9 @@
     "stubbed": true
   },
   "debt": {
-    "summary": "$28,000 left; need ~$1,474/week for 19 weeks.",
+    "summary": "$28,000 left; need ~$1,519/week for 18 weeks.",
     "remaining": 28000.0,
-    "weekly_pace_needed": 1473.68
+    "weekly_pace_needed": 1519.38
   },
   "tax": {
     "summary": "Set aside ~$0 (federal $0 + IL state $0). Estimate only \u2014 confirm with your CPA.",
