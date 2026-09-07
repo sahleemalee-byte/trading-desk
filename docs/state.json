@@ -1,11 +1,38 @@
 {
-  "as_of": "2026-09-03T15:43",
-  "day": "2026-09-03",
-  "weekday": "Thursday",
-  "highlights": [],
+  "as_of": "2026-09-07T17:10",
+  "day": "2026-09-07",
+  "weekday": "Monday",
+  "highlights": [
+    "1 trade setup(s) pending your ok"
+  ],
   "trade": {
-    "summary": "MIXED \u2014 standing down, no setups.",
-    "proposals": [],
+    "summary": "RISK-ON (score +0.40) \u2014 1 setup(s), pending your approval.",
+    "proposals": [
+      {
+        "instrument": "NQ",
+        "direction": "long",
+        "setup": "IB breakout",
+        "entry": 28226.0,
+        "stop": 28196.0,
+        "target": 28316.0,
+        "size": 2,
+        "account": "Lucid-01",
+        "point_value": 20.0,
+        "rationale": "Reclaim of 28,226 pivot with KOSPI-led semis bid.  [risk $1,200, 3.0R]"
+      }
+    ],
+    "verdict": "RISK-ON",
+    "score": 0.4,
+    "signals": {
+      "vix": "risk-off",
+      "smh": "risk-on",
+      "ewy_kospi": "risk-on",
+      "ief": "neutral",
+      "shy": "neutral",
+      "usdjpy": "risk-off",
+      "dealer_gamma": "long gamma (supportive)",
+      "news": "no major scheduled events"
+    },
     "stubbed": false
   },
   "long_term": {
@@ -56,9 +83,9 @@
     "stubbed": true
   },
   "debt": {
-    "summary": "$28,000 left; need ~$1,647/week for 17 weeks.",
+    "summary": "$28,000 left; need ~$1,704/week for 16 weeks.",
     "remaining": 28000.0,
-    "weekly_pace_needed": 1647.06
+    "weekly_pace_needed": 1704.35
   },
   "tax": {
     "summary": "Set aside ~$0 (federal $0 + IL state $0). Estimate only \u2014 confirm with your CPA.",
