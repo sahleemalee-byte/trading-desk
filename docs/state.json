@@ -1,12 +1,12 @@
 {
-  "as_of": "2026-09-07T17:10",
-  "day": "2026-09-07",
-  "weekday": "Monday",
+  "as_of": "2026-09-08T15:56",
+  "day": "2026-09-08",
+  "weekday": "Tuesday",
   "highlights": [
     "1 trade setup(s) pending your ok"
   ],
   "trade": {
-    "summary": "RISK-ON (score +0.40) \u2014 1 setup(s), pending your approval.",
+    "summary": "RISK-ON (score +0.50) \u2014 1 setup(s), pending your approval.",
     "proposals": [
       {
         "instrument": "NQ",
@@ -22,14 +22,14 @@
       }
     ],
     "verdict": "RISK-ON",
-    "score": 0.4,
+    "score": 0.5,
     "signals": {
       "vix": "risk-off",
       "smh": "risk-on",
       "ewy_kospi": "risk-on",
       "ief": "neutral",
       "shy": "neutral",
-      "usdjpy": "risk-off",
+      "usdjpy": "neutral",
       "dealer_gamma": "long gamma (supportive)",
       "news": "no major scheduled events"
     },
@@ -83,9 +83,9 @@
     "stubbed": true
   },
   "debt": {
-    "summary": "$28,000 left; need ~$1,704/week for 16 weeks.",
+    "summary": "$28,000 left; need ~$1,719/week for 16 weeks.",
     "remaining": 28000.0,
-    "weekly_pace_needed": 1704.35
+    "weekly_pace_needed": 1719.3
   },
   "tax": {
     "summary": "Set aside ~$0 (federal $0 + IL state $0). Estimate only \u2014 confirm with your CPA.",
