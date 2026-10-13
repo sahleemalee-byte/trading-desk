@@ -1,7 +1,7 @@
 {
-  "as_of": "2026-10-12T20:51",
-  "day": "2026-10-12",
-  "weekday": "Monday",
+  "as_of": "2026-10-13T18:49",
+  "day": "2026-10-13",
+  "weekday": "Tuesday",
   "highlights": [],
   "trade": {
     "summary": "MIXED \u2014 standing down, no setups.",
@@ -56,9 +56,9 @@
     "stubbed": true
   },
   "debt": {
-    "summary": "$28,000 left; need ~$2,450/week for 11 weeks.",
+    "summary": "$28,000 left; need ~$2,481/week for 11 weeks.",
     "remaining": 28000.0,
-    "weekly_pace_needed": 2450.0
+    "weekly_pace_needed": 2481.01
   },
   "tax": {
     "summary": "Set aside ~$0 (federal $0 + IL state $0). Estimate only \u2014 confirm with your CPA.",
