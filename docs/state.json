@@ -1,7 +1,7 @@
 {
-  "as_of": "2026-10-26T18:10",
-  "day": "2026-10-26",
-  "weekday": "Monday",
+  "as_of": "2026-10-27T17:24",
+  "day": "2026-10-27",
+  "weekday": "Tuesday",
   "highlights": [
     "1 trade setup(s) pending your ok",
     "running on placeholder data \u2014 add your API key"
@@ -84,9 +84,9 @@
     "stubbed": true
   },
   "debt": {
-    "summary": "$28,000 left; need ~$2,970/week for 9 weeks.",
+    "summary": "$28,000 left; need ~$3,015/week for 9 weeks.",
     "remaining": 28000.0,
-    "weekly_pace_needed": 2969.7
+    "weekly_pace_needed": 3015.38
   },
   "tax": {
     "summary": "Set aside ~$0 (federal $0 + IL state $0). Estimate only \u2014 confirm with your CPA.",
